@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
+  get 'users/new'
+
   resources :categories
 
   resources :tasks
   
   get '/about_us' => 'welcome#about_us'
   root 'welcome#index'
+  get 'signup'  => 'users#new'
+  resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
